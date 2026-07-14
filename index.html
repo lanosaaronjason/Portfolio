@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaron Jason Lanos — Portfolio</title> <!-- CHANGE: Your name -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">AJ<span>.</span>LANOS</a> <!-- CHANGE: Your initials/name -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HOME ===================== -->
+  <main id="home">
+    <div class="home-bg"></div>
+
+    <div class="hero">
+
+      <!-- Left: Text -->
+      <div class="hero-left">
+        <div class="hero-tag"></div> <!-- CHANGE: Your status -->
+
+        <h1 class="hero-name">
+          AARON<br>                          <!-- CHANGE: Your first name -->
+          LA<span class="red">NO</span>S    <!-- CHANGE: Your last name -->
+        </h1>
+
+        <div class="hero-role">Student Developer &amp; Builder</div> <!-- CHANGE: Your title -->
+
+        <div class="hero-divider"></div>
+
+        <p class="hero-desc">
+          I build digital products with precision, purpose, and an uncompromising
+          eye for detail. No shortcuts. No excuses.
+          <!-- CHANGE: Your tagline -->
+        </p>
+
+        <div class="hero-actions">
+          <a href="projects.html" class="btn-solid">View Work</a>
+          <a href="about.html"    class="btn-ghost">About Me</a>
+        </div>
+      </div>
+
+      <!-- Right: Photo -->
+      <div class="hero-right">
+        <div class="hero-num">BSIT</div>
+
+        <div class="hero-image-box">
+
+          <img src="images/AboutPic.jpg" alt="Your Name"
+            style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+         
+          <div class="hero-image-inner">◈</div>
+          <div class="hero-cross"></div>
+          <div class="hero-image-accent">Developer · Student — Philippines</div> <!-- CHANGE: Your role + location -->
+        </div>
+      </div>
+
+    </div><!-- /hero -->
+
+    <!-- ===================== PROJECTS GLIMPSE ===================== -->
+    <div class="glimpse-row">
+
+      <div class="glimpse-label">Projects</div>
+
+      <div class="glimpse-card">
+        <div class="glimpse-thumb">
+
+          <img src="images/IrounScoutLogo.png" alt="Rover" style="width:100%;height:100%;object-fit:cover;display:block;">
+         
+          <div class="glimpse-placeholder">ROVER</div>
+        </div>
+        <div class="glimpse-info">
+          <div class="glimpse-tag">Inspection · Structural</div>
+          <div class="glimpse-name">Rover</div>
+          <div class="glimpse-desc">Structural and collapse inspection tool for building integrity.</div>
+        </div>
+      </div>
+
+      <div class="glimpse-card">
+        <div class="glimpse-thumb">
+          
+          <img src="images/Calithenx.png" alt="Calithenx" style="width:100%;height:100%;object-position:center 10%;object-fit:cover;display:block;">
+         
+          <div class="glimpse-placeholder">CALITHENX</div>
+        </div>
+        <div class="glimpse-info">
+          <div class="glimpse-tag">Web · Fitness</div>
+          <div class="glimpse-name">Calithenx</div>
+          <div class="glimpse-desc">A website covering calisthenics workouts and progressions.</div>
+        </div>
+      </div>
+
+      <div class="glimpse-card">
+        <div class="glimpse-thumb">
+
+          <img src="images/JavankLogos.png" alt="Javank" 
+          style="width:100%;height:100%;object-position:center;object-fit:cover;display:block;">
+      
+          <div class="glimpse-placeholder">JAVANK</div>
+        </div>
+        <div class="glimpse-info">
+          <div class="glimpse-tag">Java · Banking</div>
+          <div class="glimpse-name">Javank</div>
+          <div class="glimpse-desc">Banking management system for accounts and transactions.</div>
+        </div>
+      </div>
+
+      <a href="projects.html" class="glimpse-cta">View All →</a>
+
+    </div><!-- /glimpse-row -->
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <a href="index.html" class="footer-logo">AJ.LANOS</a> <!-- CHANGE: Your name -->
+    <div class="socials">
+      <!-- CHANGE: Replace # with your real URLs -->
+      <a href="https://github.com/lanosaaronjason"      class="soc" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourhandle" class="soc" target="_blank">LinkedIn</a>
+      <a href="https://dribbble.com/yourhandle"    class="soc" target="_blank">Dribbble</a>
+    </div>
+    <div class="footer-copy">© 2026 Aaron Jason Lanos</div> <!-- CHANGE: Your name + year -->
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+
+</body>
+</html>

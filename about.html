@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Aaron Jason Lanos</title> <!-- CHANGE: Your name -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">A<span>.</span>LANOS</a> <!-- CHANGE: Your initials/name -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html"    class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== ABOUT ===================== -->
+  <main id="about">
+
+    <div class="section-eyebrow">About Me</div>
+
+    <h2 class="about-title">
+      BUILT.<br>NOT<br><span class="accent">BOUGHT.</span>
+      <!-- CHANGE: Your own punchy headline -->
+    </h2>
+
+    <div class="about-grid">
+
+      <!-- Left: Bio + Skills -->
+      <div>
+        <p class="about-body">
+          I'm Aaron Jason Lanos, 21 years old, i live in Davao City
+          and i am currently studying at Davao Del Norte State College 
+          with the course of Bachelor of Science in Information Technology 
+          here in Panabo City
+          <!-- CHANGE: Your bio paragraph 1 -->
+        </p>
+        <p class="about-body">
+          My hobbies are playing online games and calisthenics, 
+          i also like working out as i want to have an aesthetic and strong body. 
+          I have big plans for my future, and i am a very hardworking man. 
+          I will do any work as long as it benefits me, specially if the work will 
+          help me learn new things such as new skills and knowledge. 
+          <!-- CHANGE: Your bio paragraph 2 -->
+        </p>
+
+        <div class="skills-section">
+          <div class="skills-section-label">Arsenal</div>
+          <div class="skills-grid">
+            <!-- CHANGE: Replace with your actual skills -->
+            <div class="skill-chip">JavaScript</div>
+            <div class="skill-chip">HTML / CSS</div>
+            <div class="skill-chip">Figma</div>
+            <div class="skill-chip">GitHub </div>
+            <div class="skill-chip">Problem Solving</div>
+            <div class="skill-chip">Attention to Detail</div>
+            <div class="skill-chip">Fast Learner</div>
+            <div class="skill-chip">Research</div>
+            <!-- To add more: copy a .skill-chip line -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Photo -->
+      <div>
+        <div class="about-img-wrap">
+          <div class="corner tl"></div>
+          <div class="corner br"></div>
+            <img src="images/AboutPics.png" alt="About photo"
+              style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+        </div>
+      </div>
+
+    </div><!-- /about-grid -->
+
+    <!-- ---- Education ---- -->
+<div class="exp-title">EDUCATION</div>
+
+<div class="exp-item">
+  <div>
+    <div class="exp-role">BS Information Technology</div>  <!-- CHANGE: Your course -->
+    <div class="exp-co">Davao Del Norte State College</div> <!-- CHANGE: Your school -->
+  </div>
+  <div class="exp-date">2023 — 2026</div> <!-- CHANGE: Your year -->
+</div>
+
+<div class="exp-item">
+  <div>
+    <div class="exp-role">Senior HS</div>
+    <div class="exp-role">Junior HS</div>
+    <div class="exp-co">Teofilo V. Fernandez National High School</div> <!-- CHANGE: Your school -->
+  </div>
+  <div class="exp-date">2017 — 2023</div> <!-- CHANGE: Your year -->
+</div>
+
+<div class="exp-item">
+  <div>
+    <div class="exp-role">Elementary</div>
+    <div class="exp-co">Teofilo V. Fernandez National High School</div> <!-- CHANGE: Your school -->
+  </div>
+  <div class="exp-date">2011 — 2017</div> <!-- CHANGE: Your year -->
+</div>
+
+<!-- ---- Certifications ---- -->
+<div class="cert-title">CERTIFICATIONS</div>
+
+<div class="cert-card">
+  <div class="cert-name">
+    <a href="https://www.netacad.com/profile?tab=badges#" target="_blank">
+      CCNA: Introduction to Networks
+    </a>
+  </div>
+  <div class="cert-desc">
+    The first in a three-course series to build networking skills and prepare
+    for CCNA certification and associate-level jobs.
+  </div>
+  <div class="cert-meta">
+    <div class="cert-meta-item">Issued<span>May 31, 2025</span></div>
+    <div class="cert-meta-item">Total Hours<span>70 hrs</span></div>
+    <div class="cert-meta-item">Instructor<span>Ian Jay Padios</span></div>
+    <div class="cert-meta-item">Academy<span>Davao Del Norte State College</span></div>
+  </div>
+  <div class="cert-tags">
+    <span class="cert-tag">Networking</span>
+    <span class="cert-tag">CCNA</span>
+    <span class="cert-tag">Cisco</span>
+  </div>
+</div>  
+
+<!-- Copy the cert-card block above to add more certifications -->
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <a href="index.html" class="footer-logo">AJ.LANOS</a> <!-- CHANGE: Your name -->
+    <div class="socials">
+      <!-- CHANGE: Replace # with your real URLs -->
+      <a href="https://github.com/lanosaaronjason"      class="soc" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourhandle" class="soc" target="_blank">LinkedIn</a>
+      <a href="https://dribbble.com/yourhandle"    class="soc" target="_blank">Dribbble</a>
+    </div>
+    <div class="footer-copy">© 2026 Aaron Jason Lanos</div> <!-- CHANGE: Your name + year -->
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // Sticky nav background on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+
+</body>
+</html>

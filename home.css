@@ -1,0 +1,397 @@
+/* ============================================
+   HOME PAGE STYLES — home.css
+   ============================================ */
+
+/* ---- Background Grid ---- */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(192, 57, 43, 0.04) 0%, transparent 50%),
+    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.012) 80px, rgba(255,255,255,0.012) 81px),
+    repeating-linear-gradient(0deg,  transparent, transparent 80px, rgba(255,255,255,0.012) 80px, rgba(255,255,255,0.012) 81px);
+  pointer-events: none;
+}
+
+/* ---- Hero Layout ---- */
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- Hero Left ---- */
+.hero-left {
+  padding: 140px 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.hero-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+}
+.hero-tag::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--red);
+}
+
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 11vw, 10rem);
+  line-height: 0.88;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.8s ease forwards 0.15s;
+  opacity: 0;
+}
+.hero-name .red { color: var(--red); }
+
+.hero-role {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 20px;
+  animation: fadeUp 0.8s ease forwards 0.3s;
+  opacity: 0;
+}
+
+.hero-divider {
+  width: 50px; height: 2px;
+  background: var(--red);
+  margin: 36px 0;
+  animation: fadeUp 0.8s ease forwards 0.4s;
+  opacity: 0;
+}
+
+.hero-desc {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 380px;
+  animation: fadeUp 0.8s ease forwards 0.5s;
+  opacity: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 48px;
+  animation: fadeUp 0.8s ease forwards 0.65s;
+  opacity: 0;
+}
+
+/* ---- Hero Right ---- */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 140px 60px 80px;
+  position: relative;
+}
+
+.hero-num {
+  position: absolute;
+  top: 80px; right: 60px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.12);
+  letter-spacing: -0.05em;
+  user-select: none;
+  animation: fadeIn 1s ease forwards 0.8s;
+  opacity: 0;
+}
+
+.hero-image-box {
+  border: 7px solid var(--border);
+  aspect-ratio: 3 / 4;
+  max-height: 480px;
+  background: var(--steel);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.9s ease forwards 0.5s;
+  opacity: 0;
+}
+
+/* CHANGE: Replace .hero-image-inner with an <img> tag once you have a real photo */
+.hero-image-inner {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.06);
+  background: repeating-linear-gradient(
+    45deg,
+    transparent, transparent 10px,
+    rgba(255,255,255,0.01) 10px, rgba(255,255,255,0.01) 11px
+  );
+}
+
+.hero-image-accent {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-cross {
+  position: absolute;
+  top: 16px; left: 16px;
+  width: 20px; height: 20px;
+}
+.hero-cross::before,
+.hero-cross::after {
+  content: '';
+  position: absolute;
+  background: var(--red);
+}
+.hero-cross::before { width: 1px; height: 100%; left: 50%; top: 0; }
+.hero-cross::after  { width: 100%; height: 1px; top: 50%; left: 0; }
+
+/* ================================================
+   PROJECTS GLIMPSE ROW
+   ================================================ */
+.glimpse-row {
+  display: grid;
+  grid-template-columns: 160px repeat(3, 1fr) auto;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+
+/* "Projects" side label */
+.glimpse-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+  padding: 32px 20px;
+}
+
+/* Each project card in the row */
+.glimpse-card {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s;
+  cursor: crosshair;
+}
+.glimpse-card:hover { background: rgba(192, 57, 43, 0.04); }
+
+/* Thumbnail */
+.glimpse-thumb {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.glimpse-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.05);
+  background: repeating-linear-gradient(
+    135deg,
+    transparent, transparent 15px,
+    rgba(255,255,255,0.01) 15px, rgba(255,255,255,0.01) 16px
+  );
+}
+
+/* Text below thumbnail */
+.glimpse-info {
+  padding: 18px 22px 22px;
+  flex: 1;
+}
+
+.glimpse-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+
+.glimpse-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.glimpse-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* "View All" CTA at the end */
+.glimpse-cta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  border-left: 1px solid var(--border);
+  transition: background 0.2s, color 0.2s;
+}
+.glimpse-cta:hover {
+  background: var(--red);
+  color: var(--white);
+}
+/* ================================================
+   RESPONSIVE — home.css
+   ================================================ */
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 120px 40px 60px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-right {
+    padding: 40px 40px 60px;
+    align-items: center;
+  }
+
+  .hero-num {
+    font-size: 6rem;
+    top: 20px; right: 40px;
+  }
+
+  .hero-image-box {
+    max-height: 420px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  /* Glimpse row: stack vertically */
+  .glimpse-row {
+    grid-template-columns: 1fr;
+  }
+
+  .glimpse-label {
+    writing-mode: horizontal-tb;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 30px;
+    justify-content: flex-start;
+    font-size: 0.75rem;
+  }
+
+  .glimpse-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .glimpse-thumb {
+    aspect-ratio: auto;
+    width: 160px;
+    flex-shrink: 0;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+
+  .glimpse-cta {
+    writing-mode: horizontal-tb;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .hero-left {
+    padding: 100px 20px 48px;
+  }
+
+  .hero-right {
+    padding: 32px 20px 48px;
+  }
+
+  .hero-num { font-size: 4.5rem; top: 16px; right: 20px; }
+
+  .hero-desc { max-width: 100%; }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-actions a { text-align: center; }
+
+  .hero-image-box { max-width: 100%; }
+
+  /* Glimpse: fully stacked */
+  .glimpse-card {
+    flex-direction: column;
+  }
+
+  .glimpse-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .glimpse-label { padding: 16px 20px; }
+  .glimpse-info  { padding: 14px 20px 18px; }
+  .glimpse-cta   { padding: 16px 20px; }
+}

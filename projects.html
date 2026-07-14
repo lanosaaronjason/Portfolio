@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Alex Reyes</title> <!-- CHANGE: Your name -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">AJ<span>.</span>REYES</a> <!-- CHANGE: Your initials/name -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <main id="projects">
+
+    <div class="section-eyebrow">Selected Work</div>
+
+    <div class="proj-header">
+      <h2 class="proj-title">BUILT.<br><span class="accent">SHIPPED.</span></h2> <!-- CHANGE: Your headline -->
+      <div class="filter-row">
+        <button class="ftab active" data-filter="all">All</button>
+        <button class="ftab" data-filter="web">Web</button>
+        <button class="ftab" data-filter="mobile">Mobile</button>
+        <button class="ftab" data-filter="design">Design</button>
+        <!-- CHANGE: Add/remove filter buttons to match your categories -->
+      </div>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- ===== PROJECT 1 ===== -->
+      <div class="proj-card" data-category="web mobile">
+        <div class="proj-thumb" style="background-image:url('images/IrounScoutLogo.png');background-size:cover;background-position:center 10%;"></div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">Computer Vision</span>
+            <span class="ptag">PYTHON</span>
+            <span class="ptag">HTML/CSS</span>
+          </div>
+          <div class="proj-name">IronScout — Surveilance Rover</div>
+          <div class="proj-desc">Designed and developed an AI-powered remote controlled surveillance rover using Raspberry Pi, YOLO, and computer vision for real-time human detection and navigation.</div>
+          <a href="#" class="proj-link" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT 2 ===== -->
+      <div class="proj-card" data-category="web mobile">
+        <div class="proj-thumb" style="background-image:url('images/Calithenx.png');background-size:cover;background-position:center 10%;"></div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">HTML/CSS</span>
+            <span class="ptag">BOOTSTRAP5</span>
+            <span class="ptag">JAVASCRIPT</span>
+          </div>
+          <div class="proj-name">Calithenx</div>
+          <div class="proj-desc">Built a responsive fitness website where users can track workouts, create training plans, and shop for fitness equipment.</div>
+          <a href="#" class="proj-link" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT 3 ===== -->
+      <div class="proj-card" data-category="design">
+        <div class="proj-thumb" style="background-image:url('images/JavankLogos.png');background-size:cover;background-position:center 10%;"></div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">JAVA</span>
+          </div>
+          <div class="proj-name">Javank — Banking System</div>
+          <div class="proj-desc">Developed a Java-based CRUD banking system 
+            that enables administrators to efficiently manage customer accounts 
+            through a simple and intuitive interface.</div>
+          <a href="#" class="proj-link" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!--
+        To add more projects, copy any .proj-card block above and update:
+        - data-category="web" / "mobile" / "design" (matches filter buttons)
+        - .proj-thumb text / background image
+        - .proj-tags content
+        - .proj-name, .proj-desc, .proj-link href
+      -->
+
+    </div><!-- /proj-grid -->
+
+    <!-- CTA Banner -->
+    <div class="cta-bar">
+      <div>
+        <div class="cta-heading">Got a project? Let's talk.</div>
+        <div class="cta-sub">Available for freelance and full-time opportunities.</div> <!-- CHANGE: Your availability -->
+      </div>
+      <a href="mailto:lanos.aaronjason@dnsc.edu.ph" class="btn-solid">Get In Touch</a> <!-- CHANGE: Your email -->
+    </div>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <a href="index.html" class="footer-logo">AJ.LANOS</a> <!-- CHANGE: Your name -->
+    <div class="socials">
+      <!-- CHANGE: Replace # with your real URLs -->
+      <a href="https://github.com/lanosaaronjason"      class="soc" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourhandle" class="soc" target="_blank">LinkedIn</a>
+      <a href="https://dribbble.com/yourhandle"    class="soc" target="_blank">Dribbble</a>
+    </div>
+    <div class="footer-copy">© 2026 Aaron Jason Lanos</div> <!-- CHANGE: Your name + year -->
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // Sticky nav background on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Filter tabs — show/hide cards by category
+    const tabs  = document.querySelectorAll('.ftab');
+    const cards = document.querySelectorAll('.proj-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active tab
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category.split(' ').includes(filter);
+          card.style.display = match ? 'block' : 'none';
+
+          // Reset wide class visibility
+          if (card.classList.contains('wide') && !match) {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
